@@ -54,10 +54,11 @@ int main(int argc, char *argv[])
 	int rc = pthread_create(&threads_v4l2, NULL, v4l2_thread, NULL);
 
     pthread_join(threads_v4l2,NULL);
+    free(pfb);
+    pfb=NULL;
     screen_.uninit();
-	v4l2_.stop_capturing();
-	v4l2_.uninit_device();
-	v4l2_.close_device();
+    v4l2_.stop_capturing();
+    v4l2_.uninit_device();
 
     return 0;
 }

@@ -27,7 +27,8 @@ void SCREEN::uninit()
 {
 	unsigned int i;
 	munmap(pfb, finfo.smem_len);
-	free(pfb);
+    pfb=NULL;
+	//free(pfb);
 }
 
 int SCREEN::init(char *dev,int wid,int hgt)
