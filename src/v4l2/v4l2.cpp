@@ -113,7 +113,7 @@ void V4L2::uninit_device(void)
 		if (-1 == munmap(buffers[i].start, buffers[i].length))
 			errno_exit("munmap");
 
-	//free(buffers);
+	free(buffers);
 }
 
 void V4L2::init_mmap(void)
