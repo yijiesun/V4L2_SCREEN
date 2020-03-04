@@ -30,7 +30,7 @@ public :
 	~V4L2();
 	unsigned int width;
 	unsigned int height;
-	char dev_name[100];
+	char dev_name[200];
 	char bufSec[100];
 	int fd; 
 	struct buffer *buffers;
