@@ -38,6 +38,7 @@ int V4L2::xioctl(int fh, int request, void *arg)
 	return r;
 }
 
+//read img from v4l2 and convert to argb for hdmi show
 int V4L2::read_frame_argb(unsigned int *out,Mat &rgb,unsigned int screen_wid,unsigned int pos_x,unsigned int pos_y)
 {
 	struct v4l2_buffer buf;
@@ -56,6 +57,7 @@ int V4L2::read_frame_argb(unsigned int *out,Mat &rgb,unsigned int screen_wid,uns
 	return 1;
 }
 
+//read img from v4l2 and convert to opencv mat
 int V4L2::read_frame(Mat &out)
 {
 	struct v4l2_buffer buf;
